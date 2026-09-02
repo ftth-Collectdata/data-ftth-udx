@@ -434,7 +434,8 @@
     const LAO_MONTHS = ['ມັງກອນ','ກຸມພາ','ມີນາ','ເມສາ','ພຶດສະພາ','ມິຖຸນາ','ກໍລະກົດ','ສິງຫາ','ກັນຍາ','ຕຸລາ','ພະຈິກ','ທັນວາ'];
     const now = new Date();
     const sel = document.getElementById('citySelect');
-    for (let i = 0; i < 12; i++) {
+    // ปรับให้วนลูปสร้างเดือนย้อนหลัง 6 เดือน และไปข้างหน้า 6 เดือน
+    for (let i = -6; i <= 6; i++) {
       const d = new Date(now.getFullYear(), now.getMonth() + i, 1);
       const mm = String(d.getMonth() + 1).padStart(2, '0');
       const yyyy = d.getFullYear();
